@@ -1,0 +1,104 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #f4f4f4;
+  color: #333;
+  margin: 0;
+}
+
+.hero-header {
+  background-image: url('MIT2.jpg'); /* 👈 your background image */
+  background-size: cover;
+  background-position: center;
+  height: 400px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 20px 30px;
+  border-radius: 10px;
+}
+
+nav {
+  background: #222;
+  text-align: center;
+  padding: 10px;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: bold;
+}
+
+section {
+  max-width: 800px;
+  margin: auto;
+  padding: 30px;
+  background: white;
+  margin-top: 20px;
+  border-radius: 10px;
+}
+
+h2 {
+  color: #990000;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #eee;
+  margin-top: 40px;
+  font-size: 0.9em;
+}
+
+img {
+  display: block;
+  margin: 20px auto;
+  max-width: 90%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.project {
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.project img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.project h3 {
+  margin-top: 15px;
+  color: #990000;
+}
+
+.project p {
+  font-size: 1em;
+  color: #444;
+  padding: 0 15px;
+}
+a.button {
+  display: inline-block;
+  background-color: #00539C;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+a.button:hover {
+  background-color: #003f7d;
+}
