@@ -37,3 +37,17 @@ footer {
   background: #eee;
   margin-top: 30px;
 }
+a.button {
+  display: inline-block;
+  background-color: #00539C;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+a.button:hover {
+  background-color: #003f7d;
+}
