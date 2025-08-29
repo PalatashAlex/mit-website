@@ -11,27 +11,30 @@ background: #A31F34;
 color: white;
 padding: 20px 40px;
 display: flex;
-align-items: center;
-gap: 10px;
-}
-
-header.mit-header h1 {
-margin: 0;
-front-size: 2rem;
-}
-
-header.mit-header div{
-    flex: 1;
-    text-align: center;
-}
-header.mit-header p {
-margin: 5px 0 0 0;
-font-size: 1.1rem;
+align-items: center; /* вертикальне вирівнювання */
+justify-content: center; /* центр по горизонталі */
+position: relative;
 }
 
 .mit-logo {
-width: 200px;
+width: 100px;
 height: auto;
+position: absolute; /* залишаємо логотип зліва */
+left: 40px; /* відступ від краю */
+}
+
+header .header-title {
+text-align: center; /* заголовок по центру */
+}
+
+header .header-title h1 {
+margin: 0;
+font-size: 2rem;
+}
+
+header .header-title p {
+margin: 5px 0 0 0;
+font-size: 1.1rem;
 }
 
 /* --- Фіксована бічна навігація --- */
@@ -175,7 +178,7 @@ height: auto;
 /* --- Кнопки --- */
 a.button {
 display: inline-block;
-background-color: #A31F34;
+background-color: #00539C;
 color: white;
 padding: 10px 22px;
 text-decoration: none;
@@ -186,7 +189,7 @@ margin-top: 10px;
 }
 
 a.button:hover {
-background-color: #7b1828;
+background-color: #003f7d;
 transform: translateY(-2px);
 }
 
@@ -215,23 +218,27 @@ color: #555;
 }
 
 /* --- Responsive --- */
-@media (max-width: 768px) {
+/* --- Для ноутбуків і десктопів --- */
+@media (min-width: 768px) {
+.year-nav-fixed {
+position: fixed;
+top: 100px;
+left: 0;
+width: 160px;
+flex-direction: column;
+border-right: 3px solid #A31F34;
+justify-content: flex-start;
+}
+
 main.timeline {
-padding: 20px;
 margin: 0 auto;
-}
-.timeline::before {
-left: 20px;
-}
-.timeline-item {
-flex-direction: column;
-margin: 30px 0;
-}
-.timeline-item:nth-child(even) {
-flex-direction: column;
+max-width: 900px;
+padding-left: 40px; /* відступ, щоб не закривало меню */
 }
 }
 
+/* --- Для планшетів і телефонів --- */
+@media (max-width: 767px) {
 .year-nav-fixed {
 position: relative;
 width: 100%;
@@ -239,16 +246,12 @@ flex-direction: row;
 justify-content: space-around;
 border-right: none;
 border-bottom: 3px solid #A31F34;
+top: 0;
+padding: 10px 0;
 }
 
-@media (max-width: 600px) {
-.photos img, .photos-center img, .photos2025 img {
-width: 100%;
-}
-
-header.mit-header {
-    flex-direction: column;
-    text-align: center;
-    gap: 15px;
+main.timeline {
+margin: 0 auto;
+padding: 20px;
 }
 }
