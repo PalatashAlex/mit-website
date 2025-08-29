@@ -1,194 +1,245 @@
+/* --- Загальні стилі --- */
 body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  background: #fafafa;
-  color: #333;
+font-family: "Helvetica Neue", Arial, sans-serif;
+margin: 0;
+background: #fafafa;
+color: #333;
 }
 
-header {
-  background: #00539C;
-  color: white;
-  padding: 30px;
-  text-align: center;
+header.mit-header {
+background: #A31F34;
+color: white;
+padding: 20px 40px;
+display: flex;
+align-items: center;
+gap: 10px;
 }
 
-section {
-  max-width: 800px;
-  margin: 20px auto;
-  padding: 20px;
-  background: white;
-  border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+header.mit-header h1 {
+margin: 0;
+front-size: 2rem;
 }
 
-h2 {
-  margin-top: 0;
-  color: #00539C;
+header.mit-header div{
+    flex: 1;
+    text-align: center;
+}
+header.mit-header p {
+margin: 5px 0 0 0;
+font-size: 1.1rem;
 }
 
-.centered-topic {
-  text-align: center;
-  margin: 30px 0 15px 0;
+.mit-logo {
+width: 200px;
+height: auto;
 }
 
-.achievement-year {
-  font-weight: bold;
-  font-size: 1.5rem;
-  margin: 20px 0;
-  text-align: center; 
-  background: linear-gradient(135deg, #f0f8ff, #d0e0ff); 
-  padding: 20px 0; 
-  border-radius: 0; 
+/* --- Фіксована бічна навігація --- */
+.year-nav-fixed {
+position: fixed;
+top: 100px;
+left: 0;
+width: 160px;
+background: #fff;
+border-right: 3px solid #A31F34;
+padding: 20px 10px;
+display: flex;
+flex-direction: column;
+gap: 12px;
+z-index: 1000;
 }
 
-.achievement-text {
-  font-size: 1.1rem;
-  margin-bottom: 15px;
+.year-nav-fixed a {
+text-decoration: none;
+padding: 8px 12px;
+background: #A31F34;
+color: white;
+font-weight: 600;
+border-radius: 6px;
+transition: all 0.3s ease;
+text-align: center;
 }
 
+.year-nav-fixed a:hover {
+background-color: #7b1828;
+transform: scale(1.05);
+}
+
+/* --- Таймлайн --- */
+main.timeline {
+max-width: 900px;
+padding: 40px 20px;
+margin: 0 auto; /* Центрований контент */
+position: relative;
+}
+
+.timeline::before {
+content: '';
+position: absolute;
+top: 0;
+bottom: 0;
+width: 4px;
+background: #A31F34;
+left: 50%; /* по центру контейнера */
+transform: translateX(-50%); /* зрушення на половину ширини */
+}
+.timeline-item {
+display: flex;
+justify-content: flex-start;
+position: relative;
+margin: 40px 0;
+}
+
+.timeline-item:nth-child(even) {
+flex-direction: row-reverse;
+}
+
+.timeline-year {
+flex: 0 0 120px;
+text-align: center;
+font-size: 1.6rem;
+font-weight: bold;
+color: #A31F34;
+margin: auto 0;
+}
+
+.timeline-content {
+background: #fff;
+padding: 20px;
+border-radius: 6px;
+border: 1px solid #ddd;
+box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+width: 70%;
+position: relative;
+}
+
+.timeline-content::before {
+content: '';
+position: absolute;
+top: 20px;
+width: 14px;
+height: 14px;
+background: #A31F34;
+border-radius: 50%;
+border: 2px solid #fff;
+box-shadow: 0 0 0 3px #A31F34;
+}
+
+.timeline-item:nth-child(odd) .timeline-content::before {
+left: -36px;
+}
+
+.timeline-item:nth-child(even) .timeline-content::before {
+right: -36px;
+}
+
+/* --- Фото --- */
 .photos, .photos2025, .photos-center {
-  display: flex;
-  gap: 15px;
-  flex-wrap: wrap;
-  justify-content: center; 
-  margin-bottom: 25px;
+display: flex;
+gap: 15px;
+flex-wrap: wrap;
+justify-content: center;
+margin-bottom: 20px;
 }
 
 .photos img, .photos2025 img, .photos-center img {
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+border-radius: 6px;
+box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+border: 1px solid #ddd;
 }
 
-
 .photos img.photo {
-  width: 45%; 
+width: 45%;
 }
 
 .photos img:not(.photo) {
-  width: 45%; 
+width: 45%;
 }
-
 
 .photos-center img.photo-large {
-  width: 65%; 
-  display: block;
+width: 65%;
+display: block;
+margin: auto;
 }
-
-
-.photos2025 {
-  justify-content: center;
-}
-
 
 .photos2025 img.photo2025 {
-  width: 450px; 
-  height: auto;
+width: 450px;
+height: auto;
 }
-
 
 .photos2025 img.photo-small {
-  width: 250px;
-  height: auto;
+width: 250px;
+height: auto;
 }
 
-
-.photos .photo-center.photo-large {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 65%;
-}
-
-.photo-description, .video-description {
-  font-size: 1.1rem;
-  margin-bottom: 15px;
-}
-
+/* --- Кнопки --- */
 a.button {
-  display: inline-block;
-  background-color: #00539C;
-  color: white;
-  padding: 10px 20px;
-  text-decoration: none;
-  border-radius: 8px;
-  font-weight: bold;
-  transition: background 0.3s ease;
-  margin-top: 10px;
+display: inline-block;
+background-color: #A31F34;
+color: white;
+padding: 10px 22px;
+text-decoration: none;
+border-radius: 6px;
+font-weight: 600;
+transition: all 0.3s ease;
+margin-top: 10px;
 }
 
 a.button:hover {
-  background-color: #003f7d;
+background-color: #7b1828;
+transform: translateY(-2px);
 }
 
+/* --- Reflection & text --- */
+.achievement-text {
+font-size: 1.05rem;
+margin-bottom: 15px;
+line-height: 1.6;
+}
+
+.centered-topic {
+text-align: center;
+margin: 30px 0 15px 0;
+color: #A31F34;
+font-weight: 600;
+}
+
+/* --- Footer --- */
 footer {
-  text-align: center;
-  padding: 20px;
-  background: #eee;
-  margin-top: 30px;
-  font-size: 0.9rem;
-  color: #555;
+text-align: center;
+padding: 20px;
+background: #f7f7f7;
+margin-top: 40px;
+font-size: 0.9rem;
+color: #555;
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+main.timeline {
+padding: 20px;
+}
+.timeline::before {
+left: 20px;
+}
+.timeline-item {
+flex-direction: column;
+}
+.timeline-item:nth-child(even) {
+flex-direction: column;
+}
 }
 
 @media (max-width: 600px) {
-  .photos img,
-  .photos-center img,
-  .photos2025 img {
-    width: 100%;
-  }
+.photos img, .photos-center img, .photos2025 img {
+width: 100%;
 }
-.year-nav {
-  text-align: center;
-  margin: 40px auto;
-  padding: 12px 20px;
-  border: 2px solid #00539C; 
-  border-radius: 12px;
-  display: table;
-  background: #f0f8ff; 
+.year-nav-fixed {
+position: relative;
+width: 100%;
+flex-direction: row;
+justify-content: space-around;
+border-right: none;
+border-bottom: 3px solid #A31F34;
 }
-
-.year-nav a {
-  display: inline-block;
-  margin: 0 12px;
-  padding: 8px 18px;
-  background: #00539C;
-  color: white;
-  text-decoration: none;
-  border-radius: 8px;
-  font-weight: bold;
-  transition: all 0.3s ease;
-}
-
-.year-nav a:hover {
-  background: #003f7d;
-  transform: scale(1.1);
-}
-
-#year2023 {
-  padding: 20px;
-  border-radius: 12px;
-  background: linear-gradient(135deg, #f0f8ff, #d0e0ff); 
-  margin-bottom: 20px;
-}
-
-#year2024 {
-  padding: 20px;
-  border-radius: 12px;
-  background: linear-gradient(135deg,  #f0f8ff, #d0e0ff); 
-  margin-bottom: 20px;
-}
-
-#year2025 {
-  padding: 20px;
-  border-radius: 12px;
-  background: linear-gradient(135deg, #f0f8ff, #d0e0ff); 
-  margin-bottom: 20px;
-}
-
-.video-link {
-  text-align: center;  
-  margin: 15px 0;     
-}
-
-.video-link a.button {
-  display: inline-block;
 }
