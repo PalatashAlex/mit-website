@@ -1,4 +1,4 @@
-/* --- Загальні стилі --- */
+/* --- Загальні стилі --- *//* --- Загальні стилі --- */
 body {
 font-family: "Helvetica Neue", Arial, sans-serif;
 margin: 0;
@@ -239,33 +239,32 @@ padding-left: 40px; /* відступ, щоб не закривало меню *
 
 /* --- Для планшетів і телефонів --- */
 @media (max-width: 767px) {
-/* Приховуємо всі фото */
-.photos, .photos2025, .photos-center {
+.mit-logo {
 display: none;
 }
 
 /* Таймлайн по центру */
 .timeline::before {
 left: 50%; /* по центру контейнера */
-transform: translateX(-50%); /* центр по ширині */
+transform: translateX(-50%);
 }
 
 .timeline-item {
-flex-direction: column; /* вертикальні блоки */
-align-items: center; /* по центру */
+flex-direction: column;
+align-items: center;
 margin: 30px 0;
 }
 
 .timeline-item:nth-child(even) {
-flex-direction: column; /* щоб все йшло в колонку */
+flex-direction: column;
 }
 
 .timeline-content {
-width: 90%; /* контент займає майже всю ширину */
+width: 90%; /* майже вся ширина */
 }
 
 .timeline-content::before {
-left: 50%; /* маркер по центру блоку */
+left: 50%;
 transform: translateX(-50%);
 }
 
