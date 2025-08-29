@@ -245,8 +245,11 @@ display: none;
 
 /* Таймлайн по центру */
 .timeline::before {
-left: 50%; /* по центру контейнера */
-transform: translateX(-50%);
+display: none;
+}
+
+.timeline-item::before{
+display: none;
 }
 
 .timeline-item {
@@ -280,3 +283,4 @@ top: 0;
 padding: 10px 0;
 }
 }
+
