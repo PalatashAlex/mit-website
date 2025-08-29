@@ -218,22 +218,20 @@ color: #555;
 @media (max-width: 768px) {
 main.timeline {
 padding: 20px;
+margin: 0 auto;
 }
 .timeline::before {
 left: 20px;
 }
 .timeline-item {
 flex-direction: column;
+margin: 30px 0;
 }
 .timeline-item:nth-child(even) {
 flex-direction: column;
 }
 }
 
-@media (max-width: 600px) {
-.photos img, .photos-center img, .photos2025 img {
-width: 100%;
-}
 .year-nav-fixed {
 position: relative;
 width: 100%;
@@ -241,5 +239,16 @@ flex-direction: row;
 justify-content: space-around;
 border-right: none;
 border-bottom: 3px solid #A31F34;
+}
+
+@media (max-width: 600px) {
+.photos img, .photos-center img, .photos2025 img {
+width: 100%;
+}
+
+header.mit-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
 }
 }
