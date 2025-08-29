@@ -17,7 +17,7 @@ position: relative;
 }
 
 .mit-logo {
-width: 100px;
+width: 200px;
 height: auto;
 position: absolute; /* залишаємо логотип зліва */
 left: 40px; /* відступ від краю */
@@ -239,6 +239,20 @@ padding-left: 40px; /* відступ, щоб не закривало меню *
 
 /* --- Для планшетів і телефонів --- */
 @media (max-width: 767px) {
+.timeline::before {
+left: 50%; /* по центру контейнера */
+transform: translateX(-50%); /* центр по ширині */
+}
+
+.timeline-item {
+flex-direction: column;
+margin: 30px 0;
+}
+
+.timeline-item:nth-child(even) {
+flex-direction: column;
+}
+
 .year-nav-fixed {
 position: relative;
 width: 100%;
@@ -248,10 +262,5 @@ border-right: none;
 border-bottom: 3px solid #A31F34;
 top: 0;
 padding: 10px 0;
-}
-
-main.timeline {
-margin: 0 auto;
-padding: 20px;
 }
 }
