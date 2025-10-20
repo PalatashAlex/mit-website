@@ -37,13 +37,13 @@ margin: 5px 0 0 0;
 font-size: 1.1rem;
 }
 
-/* --- Фіксована бічна навігація --- */
+/* --- Бічна навігація --- */
 .year-nav-fixed {
 position: fixed;
 top: 100px;
 left: 0;
 width: 160px;
-background:  #fff;
+background: #fff;
 border-right: 3px solid #A31F34;
 padding: 20px 10px;
 display: flex;
@@ -92,13 +92,13 @@ transform: translateX(-50%);
 position: relative;
 margin: 60px 0;
 display: flex;
-justify-content: center; /* текстові блоки по центру */
+flex-direction: column;
+align-items: center;
+justify-content: center;
 }
 
-/* --- Роки зигзагом --- */
+/* --- Роки --- */
 .timeline-year {
-position: absolute;
-top: -35px;
 font-size: 1.6rem;
 font-weight: bold;
 padding: 4px 12px;
@@ -108,16 +108,16 @@ z-index: 2;
 }
 
 .timeline-item:nth-child(odd) .timeline-year {
-left: 0; /* ліворуч */
+align-self: flex-start;
 color: #A31F34;
 }
 
 .timeline-item:nth-child(even) .timeline-year {
-right: 0; /* праворуч */
+align-self: flex-end;
 color: #A31F34;
 }
 
-/* --- Контент --- */
+/* --- Контент таймлайну --- */
 .timeline-content {
 background: #fff;
 padding: 20px;
@@ -125,29 +125,22 @@ border-radius: 6px;
 border: 1px solid #ddd;
 box-shadow: 0 2px 6px rgba(0,0,0,0.08);
 width: 70%;
-position: relative;
+max-width: 700px;
 text-align: left;
+display: flex;
+flex-direction: column;
+gap: 15px;
+margin: 10px auto;
+position: relative;
+box-sizing: border-box;
 }
 
-/* Кружечки на лінії під роками */
-.timeline-item:nth-child(odd) .timeline-content::before {
-content: '';
-position: absolute;
-top: 20px;
-left: -36px;
-width: 14px;
-height: 14px;
-background: #A31F34;
-border-radius: 50%;
-border: 2px solid #fff;
-box-shadow: 0 0 0 3px #A31F34;
-}
-
+/* Кружечки на лінії */
+.timeline-item:nth-child(odd) .timeline-content::before,
 .timeline-item:nth-child(even) .timeline-content::before {
 content: '';
 position: absolute;
 top: 20px;
-right: -36px;
 width: 14px;
 height: 14px;
 background: #A31F34;
@@ -156,49 +149,68 @@ border: 2px solid #fff;
 box-shadow: 0 0 0 3px #A31F34;
 }
 
-/* --- Фото --- */
-.photos, .photos2025, .photos-center {
-display: flex;
-gap: 15px;
-flex-wrap: wrap;
-justify-content: center;
-margin-bottom: 20px;
-}
+.timeline-item:nth-child(odd) .timeline-content::before { left: -36px; }
+.timeline-item:nth-child(even) .timeline-content::before { right: -36px; }
 
-.photos img, .photos2025 img, .photos-center img {
-border-radius: 6px;
-box-shadow: 0 1px 4px rgba(0,0,0,0.1);
-border: 1px solid #ddd;
+/* --- Фото (окремі класи) --- */
+.photo-2023-1 {
+width: 350px;
+height: 300px;
 }
-
-.photos img.photo {
-width: 45%;
+.photo-2023-2{
+width: 230px;
+height: 300px;
 }
-
-.photos img:not(.photo) {
-width: 45%;
-}
-
-.photos-center img.photo-large {
-width: 65%;
+.photo-2024-1{
 display: block;
-margin: auto;
+margin: 10px auto;
+width: 400px;
+height: 400px;
+border-radius: 6px;
+}
+.photo-2024-2{
+display: block;
+margin: 10px auto;
+width: 400px;
+height: 500px;
+border-radius: 6px;
+}
+.photo-2024-3{
+display: block;
+margin: 10px auto;
+width: 500px;
+height: 400px;
+border-radius: 6px;
+}
+.photo-2025-1{
+display: block;
+margin: 10px auto;
+width: 400px;
+height: 300px;
+border-radius: 6px;
+}
+.photo-2025-2{
+display: block;
+margin: 10px auto;
+width: 400px;
+height: 450px;
+border-radius: 6px;
+}
+.photo-2025-3 {
+display: block;
+margin: 10px auto;
+width: 400px;
+height: 500px;
+border-radius: 6px;
 }
 
-.photos2025 img.photo2025 {
-max-width: 450px;
-width: 100%;
-height: auto;
+/* --- Відео кнопки --- */
+.video-container {
+text-align: center; /* по центру контейнера */
+margin-top: 10px;
 }
 
-.photos2025 img.photo-small {
-max-width: 250px;
-width: 100%;
-height: auto;
-}
-
-/* --- Кнопки --- */
-a.button {
+.video-container a.button {
 display: inline-block;
 background-color: #00539C;
 color: white;
@@ -207,15 +219,35 @@ text-decoration: none;
 border-radius: 6px;
 font-weight: 600;
 transition: all 0.3s ease;
-margin-top: 10px;
 }
 
-a.button:hover {
+.video-container a.button:hover {
 background-color: #003f7d;
 transform: translateY(-2px);
 }
 
-/* --- Reflection & text --- */
+.video-container1{
+text-align: left; 
+margin-top: 10px;
+}
+
+.video-container1 a.button {
+display: inline-block;
+background-color: #00539C;
+color: white;
+padding: 10px 22px;
+text-decoration: none;
+border-radius: 6px;
+font-weight: 600;
+transition: all 0.3s ease;
+}
+
+.video-container1 a.button:hover {
+background-color: #003f7d;
+transform: translateY(-2px);
+}
+
+/* --- Тексти --- */
 .achievement-text {
 font-size: 1.05rem;
 margin-bottom: 15px;
@@ -243,11 +275,7 @@ font-size: 0.9rem;
 color: #555;
 }
 
-/* --- Accessibility --- */
-a:focus {
-outline: 3px solid #FFD700;
-outline-offset: 2px;
-}
+
 
 html {
 scroll-behavior: smooth;
@@ -255,35 +283,12 @@ scroll-behavior: smooth;
 
 /* --- Responsive --- */
 @media (max-width: 767px) {
-.mit-logo {
-display: none;
-}
-
-.timeline::before {
-display: none;
-}
-
-.timeline-item {
-margin: 40px 0;
-}
-
-.timeline-year {
-position: relative;
-top: 0;
-left: auto;
-right: auto;
-margin-bottom: 15px;
-text-align: center;
-}
-
-.timeline-content {
-width: 90%;
-}
-
-.timeline-content::before {
-display: none;
-}
-
+.mit-logo { display: none; }
+.timeline::before { display: none; }
+.timeline-item { margin: 40px 0; }
+.timeline-year { align-self: center !important; margin-bottom: 15px; text-align: center; }
+.timeline-content { width: 90%; margin: 0 auto; }
+.timeline-content::before { display: none; }
 .year-nav-fixed {
 position: relative;
 width: 100%;
@@ -295,12 +300,10 @@ top: 0;
 padding: 10px 0;
 background: #fff;
 }
+.year-nav-fixed a { flex: 1; margin: 0 5px; }
+}
 
-.year-nav-fixed a {
-flex: 1;
-margin: 0 5px;
-}
-}
+/* --- Research cards --- */
 .research-card {
 background: #fefefe;
 border: 2px solid #A31F34;
@@ -318,10 +321,7 @@ font-size: 1.3rem;
 margin-bottom: 12px;
 }
 
-.research-card p {
-margin: 10px 0;
-line-height: 1.6;
-}
+.research-card p { margin: 10px 0; line-height: 1.6; }
 
 .research-card ul {
 margin: 10px 0 15px 20px;
@@ -329,6 +329,4 @@ padding: 0;
 line-height: 1.6;
 }
 
-.research-card li {
-margin-bottom: 6px;
-}
+.research-card li { margin-bottom: 6px; }
