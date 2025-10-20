@@ -1,332 +1,206 @@
-/* --- Загальні стилі --- */
-body {
-font-family: "Helvetica Neue", Arial, sans-serif;
-margin: 0;
-background: #fafafa;
-color: #333;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Achievements</title>
+<link rel="stylesheet" href="style.achievements.css">
+</head>
+<body>
 
-header.mit-header {
-background: #A31F34;
-color: white;
-padding: 20px 40px;
-display: flex;
-align-items: center;
-justify-content: center;
-position: relative;
-}
+<header class="mit-header">
+<img src="achieve.png" alt="Logo" class="mit-logo">
+<div class="header-title">
+<h1>My Achievements 🚀</h1>
+<p>Some of my academic and technical accomplishments ✨</p>
+</div>
+</header>
 
-.mit-logo {
-width: 200px;
-height: auto;
-position: absolute;
-left: 40px;
-}
+<nav class="year-nav-fixed">
+<a href="#year2023">2023</a>
+<a href="#year2024">2024</a>
+<a href="#year2025">2025</a>
+<a href="#reflection">Reflection</a>
+</nav>
 
-header .header-title {
-text-align: center;
-}
+<main class="timeline">
 
-header .header-title h1 {
-margin: 0;
-font-size: 2rem;
-}
+<!-- 2023 -->
 
-header .header-title p {
-margin: 5px 0 0 0;
-font-size: 1.1rem;
-}
+<div class="timeline-item" id="year2023">
+<div class="timeline-year">2023</div>
+<div class="timeline-content">
+🪐 I won 3rd place at the Junior Academy of Sciences of Ukraine (МАН) competition in Astronomy.
 
-/* --- Бічна навігація --- */
-.year-nav-fixed {
-position: fixed;
-top: 100px;
-left: 0;
-width: 160px;
-background: #fff;
-border-right: 3px solid #A31F34;
-padding: 20px 10px;
-display: flex;
-flex-direction: column;
-gap: 12px;
-z-index: 1000;
-}
+<div>
+<img src="показ.jpg" alt="Astronomy competition photo 1" class="photo-2023-1">
+<img src="нагорода.jpg" alt="Astronomy competition photo 2" class="photo-2023-2">
+</div>
 
-.year-nav-fixed a {
-text-decoration: none;
-padding: 8px 12px;
-background: #A31F34;
-color: white;
-font-weight: 600;
-border-radius: 6px;
-transition: all 0.3s ease;
-text-align: center;
-}
+The idea for writing a scientific paper on solar research came to me because in 2022, I conducted observations of a solar event while serving as the president of the astronomy club. At that time, many people gathered, and I explained the event to them. A television crew also came, and I gave an interview about the observation.
+<p >Below is the link to the news segment with the observation. Please include English subtitles.</p>
+<div class="video-container">
+<a href="https://www.youtube.com/watch?v=30VEkswxMg4&t=38s" target="_blank" class="button">
+  ▶️ Watch news segment (starts at 0:38)
+</a>
+</div>
+</a>
+<p></p>
+<!-- 🔽 Блок дослідження всередині timeline-content -->
+<div class="achievement-text">
+<h3>Computer modeling of solar eclipses in Transcarpathia in the past and future</h3>
+<p><strong>Description:</strong> The work examines the fundamentals of the theory of solar eclipses, the physical nature of the Moon, its motion, and its role in the occurrence of different types of eclipses. It also provides a detailed description of astronomical phenomenon modeling, in particular the algorithm for finding eclipses using the electronic planetarium REDSHIFT-7, with accompanying tables and maps of eclipse circumstances. Using another electronic planetarium, STELLARIUM-0.12.4, visualizations of the main phases of several total, annular, and partial eclipses of the past and future were created. Detailed lists and maps are provided for some total, annular, and partial eclipses that occurred in Transcarpathia over the past 350 years and will occur in the next 150 years. The relevance of this work lies in demonstrating the importance not only of astronomical knowledge but also of the ability to apply it for reconstructing historical CVCALLD：</p>
 
-.year-nav-fixed a:hover {
-background-color: #7b1828;
-transform: scale(1.05);
-}
+<p><strong>The positive aspects:</strong> systematic and coherent presentation of material, independently conducted research, and the ability to work in library archives, obtaining valuable information.</p>
 
-/* --- Таймлайн --- */
-main.timeline {
-max-width: 900px;
-padding: 40px 20px;
-margin: 0 auto;
-position: relative;
-}
+<p><strong>Motivation:</strong> Solar eclipses are among the most fascinating astronomical events. I wanted not only to study their physics but also to show how astronomy can explain historical events and inspire students to explore space.</p>
 
-.timeline::before {
-content: '';
-position: absolute;
-top: 0;
-bottom: 0;
-width: 4px;
-background: #A31F34;
-left: 50%;
-transform: translateX(-50%);
-}
+<p><strong>Process:</strong></p>
+<ul>
+<li>Modeled eclipses with REDSHIFT-7 and generated tables and maps of their circumstances</li>
+<li>Used STELLARIUM-012.4 to visualize eclipse phases</li>
+<li>Analyzed historical texts (Huklyvskyi Chronicle, Song of Terrible Years, 19th-century "Mesiatsoslov") to find cultural mentions of eclipses</li>
+<li>Compared results of simulations with historical evidence</li>
+</ul>
 
-/* --- Елементи таймлайну --- */
-.timeline-item {
-position: relative;
-margin: 60px 0;
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-}
-
-/* --- Роки --- */
-.timeline-year {
-font-size: 1.6rem;
-font-weight: bold;
-padding: 4px 12px;
-border-radius: 4px;
-background: #fafafa;
-z-index: 2;
-}
-
-.timeline-item:nth-child(odd) .timeline-year {
-align-self: flex-start;
-color: #A31F34;
-}
-
-.timeline-item:nth-child(even) .timeline-year {
-align-self: flex-end;
-color: #A31F34;
-}
-
-/* --- Контент таймлайну --- */
-.timeline-content {
-background: #fff;
-padding: 20px;
-border-radius: 6px;
-border: 1px solid #ddd;
-box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-width: 70%;
-max-width: 700px;
-text-align: left;
-display: flex;
-flex-direction: column;
-gap: 15px;
-margin: 10px auto;
-position: relative;
-box-sizing: border-box;
-}
-
-/* Кружечки на лінії */
-.timeline-item:nth-child(odd) .timeline-content::before,
-.timeline-item:nth-child(even) .timeline-content::before {
-content: '';
-position: absolute;
-top: 20px;
-width: 14px;
-height: 14px;
-background: #A31F34;
-border-radius: 50%;
-border: 2px solid #fff;
-box-shadow: 0 0 0 3px #A31F34;
-}
-
-.timeline-item:nth-child(odd) .timeline-content::before { left: -36px; }
-.timeline-item:nth-child(even) .timeline-content::before { right: -36px; }
-
-/* --- Фото (окремі класи) --- */
-.photo-2023-1 {
-width: 350px;
-height: 300px;
-}
-.photo-2023-2{
-width: 230px;
-height: 300px;
-}
-.photo-2024-1{
-display: block;
-margin: 10px auto;
-width: 400px;
-height: 400px;
-border-radius: 6px;
-}
-.photo-2024-2{
-display: block;
-margin: 10px auto;
-width: 400px;
-height: 500px;
-border-radius: 6px;
-}
-.photo-2024-3{
-display: block;
-margin: 10px auto;
-width: 500px;
-height: 400px;
-border-radius: 6px;
-}
-.photo-2025-1{
-display: block;
-margin: 10px auto;
-width: 400px;
-height: 300px;
-border-radius: 6px;
-}
-.photo-2025-2{
-display: block;
-margin: 10px auto;
-width: 400px;
-height: 450px;
-border-radius: 6px;
-}
-.photo-2025-3 {
-display: block;
-margin: 10px auto;
-width: 400px;
-height: 500px;
-border-radius: 6px;
-}
-
-/* --- Відео кнопки --- */
-.video-container {
-text-align: center; /* по центру контейнера */
-margin-top: 10px;
-}
-
-.video-container a.button {
-display: inline-block;
-background-color: #00539C;
-color: white;
-padding: 10px 22px;
-text-decoration: none;
-border-radius: 6px;
-font-weight: 600;
-transition: all 0.3s ease;
-}
-
-.video-container a.button:hover {
-background-color: #003f7d;
-transform: translateY(-2px);
-}
-
-.video-container1{
-text-align: left; 
-margin-top: 10px;
-}
-
-.video-container1 a.button {
-display: inline-block;
-background-color: #00539C;
-color: white;
-padding: 10px 22px;
-text-decoration: none;
-border-radius: 6px;
-font-weight: 600;
-transition: all 0.3s ease;
-}
-
-.video-container1 a.button:hover {
-background-color: #003f7d;
-transform: translateY(-2px);
-}
-
-/* --- Тексти --- */
-.achievement-text {
-font-size: 1.05rem;
-margin-bottom: 15px;
-line-height: 1.6;
-background: #f7f7f7;
-border-left: 4px solid #A31F34;
-padding: 20px;
-border-radius: 6px;
-}
-
-.centered-topic {
-text-align: center;
-margin: 30px 0 15px 0;
-color: #A31F34;
-font-weight: 600;
-}
-
-/* --- Footer --- */
-footer {
-text-align: center;
-padding: 20px;
-background: #f2f2f2;
-margin-top: 40px;
-font-size: 0.9rem;
-color: #555;
-}
+<p><strong>Results:</strong></p>
+<ul>
+<li>Produced complete chronology of eclipses for 500 years (350 past, 150 future)</li>
+<li>Generated visualizations and maps for full, annular, and partial eclipses</li>
+<li>Verified historical sources by aligning astronomical predictions with documented events</li>
+</ul>
+</div>
+<!-- 🔼 Кінець блоку дослідження -->
 
 
+<div >
+My other activities in 2023:
+<p>🏅 Winner at the Local and Regional Stages of the Junior Academy of Sciences of Ukraine.</p>
+<p>📡 Active participant of the Radio Electronic Design Club, later became president.</p>
+<p>🎨 Participation in the annual exhibition "From St. Nicholas to Christmas".</p>
+<p>🧪 Participation in the All-Ukrainian Physics Olympiad.</p>
+</div>
+</div>
+</div>
 
-html {
-scroll-behavior: smooth;
-}
+<!-- 2024 -->
+<div class="timeline-item" id="year2024">
+<div class="timeline-year">2024</div>
+<div class="timeline-content">
+🚂 The following year, I began working on a scientific project related to the modernization of locomotives. This project won 3rd place at the Junior Academy of Sciences of Ukraine (МАН).
+<p>I chose this topic because railways are my hobby, and I noticed certain problems in them. I was incredibly fortunate to receive access to a locomotive depot, where I was able to collect all the necessary materials. In the first photo, you can see the locomotives I described in my modernization project, and in the second photo, you can see me studying the design of one of the locomotives.</p>
+<div class="photos">
+<img src="depo1.jpg" alt="photo 1 " class="photo-2024-1">
+<img src="depo2.jpg" alt="photo 2" class="photo-2024-2">
+</div>
 
-/* --- Responsive --- */
-@media (max-width: 767px) {
-.mit-logo { display: none; }
-.timeline::before { display: none; }
-.timeline-item { margin: 40px 0; }
-.timeline-year { align-self: center !important; margin-bottom: 15px; text-align: center; }
-.timeline-content { width: 90%; margin: 0 auto; }
-.timeline-content::before { display: none; }
-.year-nav-fixed {
-position: relative;
-width: 100%;
-flex-direction: row;
-justify-content: space-around;
-border-right: none;
-border-bottom: 3px solid #A31F34;
-top: 0;
-padding: 10px 0;
-background: #fff;
-}
-.year-nav-fixed a { flex: 1; margin: 0 5px; }
-}
+<div class="achievement-text">
+<h3>Modernization of Ukraine’s locomotives</h3>
+<p><strong>Description:</strong> The presented work is dedicated to improving the technical characteristics of locomotives. I have summarized the available solutions to the operational problems of outdated locomotives on Ukraine’s railways and proposed my own ideas in this area. After a thorough analysis of the issues, I set myself the goal of developing a more advanced scheme for protecting the electric motor from runaway, as well as finding a way to use rheostatic braking more efficiently on diesel locomotives.
 
-/* --- Research cards --- */
-.research-card {
-background: #fefefe;
-border: 2px solid #A31F34;
-border-left: 8px solid #A31F34;
-padding: 20px;
-margin: 25px 0;
-border-radius: 8px;
-box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-}
+The relevance of this work lies in the improvement of locomotive design, which will allow locomotives to better meet the needs of the transport network.
 
-.research-card h3 {
-margin-top: 0;
-color: #A31F34;
-font-size: 1.3rem;
-margin-bottom: 12px;
-}
+The positive aspects of this research work include the systematic and coherent presentation of material, the presence of independently conducted research, and the ability to work in institutions such as depots, gaining valuable practical information.</p>
 
-.research-card p { margin: 10px 0; line-height: 1.6; }
+<p><strong>Motivation:</strong> Living near a railway station, I repeatedly observed the problems that arose during the operation of diesel and electric locomotives. That is why I wanted to create a practical, hands-on solution to improve efficiency, reduce costs, and demonstrate sustainable engineering. </p>
 
-.research-card ul {
-margin: 10px 0 15px 20px;
-padding: 0;
-line-height: 1.6;
-}
+<p><strong>Process:</strong></p>
+<ul>
+<li>Studied diesel locomotive braking systems and energy losses.</li>
+<li>Studied electric locomotive traction motors and problems with them</li>
+<li>Created diagrams showing system integration into locomotives.</li>
+</ul>
 
-.research-card li { margin-bottom: 6px; }
+<p><strong>Results:</strong></p>
+<ul>
+<li>Described the prototypes of the devices</li>
+<li>Produced diagrams and instructions for implementing the system.</li>
+</ul>
+</div>
+ <p>Below you can watch a news segment featuring my interview, where I share some comments about this project. Please include English subtitles.</p>
+<div class="video-container">
+ <a href="https://www.youtube.com/watch?v=6lE51dzWRyw&t=83s" target="_blank" class="button">▶️ Watch news segment (starts at 1:23)</a>
+</div>
+<p></p>
+<div>
+</div>
+<div>
+🏆 Another major achievement of mine this year was winning 3rd place at the All-Ukrainian Debate Tournament.
+</div>
+<div>
+<img src="debate.jpg" class="photo-2024-3" alt="Debate competition photo">
+</div>
+<div>
+My other activities in 2024:
+<p>🏅 Winner at the Regional Stages of the Junior Academy of Sciences of Ukraine.</p>
+<p>🎨 Participation in the annual exhibition "From St. Nicholas to Christmas".</p>
+<p>📡 Participation in the All-Ukrainian Radio Electronics Design Competition.</p>
+<p>💻 Active participant of the Programming Club.</p>
+<p>🤖 Active participant of the Robotics Club.</p>
+</div>
+</div>
+</div>
+
+<!-- 2025 -->
+<div class="timeline-item" id="year2025">
+<div class="timeline-year">2025</div>
+<div class="timeline-content">
+🌍 In 2025, I continued my work, wrote another paper, and built a demonstration model of the device I had described in my research. That year was marked by major changes in my life. A war continued in my country, and because of this, I was forced to leave my home and move to the United States, where I am still trying to continue developing my projects.  Despite many challenges, my project won the Ukrainian Future 2025 program — the business incubator.
+<div>
+<img src="me.jpg" class="photo-2025-1" alt="Presentation photo">
+<img src="лок.jpg" class="photo-2025-2" alt="Prototype photo">
+</div>
+
+<div class="achievement-text">
+<h3>Traction motor anti-wheelslip protection device</h3>
+<p><strong>Description:</strong> In this work, I summarized the available solutions to the problem of wheelslip on Ukraine’s railways and proposed my own ideas in this area. By analyzing existing solutions, I identified shortcomings in the traction motor anti-wheelslip protection system. The wheelslip protection system on locomotives—implemented as a wheelslip relay (WSR)—in certain situations cannot prevent motor runaway. Therefore, I set myself the goal of developing a scheme to protect the electric motor from runaway. This time, I worked not only on the theoretical part but also aimed to demonstrate an experimental prototype. To achieve this, I found a suitable place for experiments and gathered the necessary materials. In the end, I was able to design and build a tangible model of the development.
+
+The positive aspects of this research work include the systematic and coherent presentation of material, independently conducted research, and the ability to work in institutions such as depots, consulting with specialists in this field.
+</p>
+
+<p><strong>Motivation:</strong> After the success of my previous work, I decided to continue the project. This time, I focused on electric locomotives and created an experimental model of the device. </p>
+
+<p><strong>Process:</strong></p>
+<ul>
+<li>Studied locomotive systems and identified conditions leading to wheelslip.</li>
+<li>Designed a protection from wheelslip.</li>
+<li>Created schematics and structural diagrams for modernization.</li>
+<li>Collected operational data from railway depots to validate proposed solutions.</li>
+</ul>
+
+<p><strong>Results:</strong></p>
+<ul>
+<li>Developed a functional design for a wheelslip protection system.</li>
+<li>Provided diagrams for integration into existing locomotives.</li>
+<li>Proposed methods to improve operational efficiency and safety.</li>
+</ul>
+</div>
+
+<div>
+My other activities in 2025:
+<p>🛩️ Active participant of the FPV Club. I learned to pilot and assemble FPV drones, some of which were sent to the army.</p>
+<div class="photos">
+<img src="drone.jpg" class="photo-2025-3" alt="FPV drone photo">
+</div>
+<p>🧪 Participation in the All-Ukrainian Chemistry Olympiad.</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+
+<h2 class="centered-topic" id="reflection">Reflection 💡</h2>
+<div class="achievement-text">
+<p><p>Each of these achievements represents a moment of curiosity, effort and growth. Whether it was repairing a complex device, building systems with Flowcode, or competing in science Olympiads, I always aimed to go beyond the surface — to understand, to improve, and to innovate.</p>
+<p>I don't view challenges as obstacles — I see them as opportunities to learn and evolve. My passion for electronics, programming and physics is not limited to school projects; I find joy in solving problems and building solutions that have real-world impact.</p>
+<p>I believe that my journey is only beginning. I am eager to join communities that value creativity and collaboration. Georgia Tech, with its culture of invention and excellence, is the place where I know I will thrive.</p>
+</div>
+<div class="video-container1">
+<p><a href="index.html" class="button">⬅️ Back to MIT Site</a></p>
+</div>
+<footer>
+&copy; 2025 Oleksandr Palatash
+</footer>
+
+</body>
+</html>
